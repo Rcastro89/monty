@@ -75,7 +75,7 @@ void pint(stack_t **stack, unsigned int line_number)
 	}
 	else
 	{
-		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
+		fprintf(stderr, "L%d: : can't pint, stack empty\n", line_number);
 		free_dlist(*stack);
 		free(lines);
 		fclose(temp_file);
@@ -94,7 +94,7 @@ void pop(stack_t **stack, unsigned int line_number)
 
 	if (!*stack)
 	{
-		fprintf(stderr, "L%d: can't pop an empty\n", line_number);
+		fprintf(stderr, "L%d: : can't pop an empty\n", line_number);
 		free_dlist(*stack);
 		free(lines);
 		fclose(temp_file);

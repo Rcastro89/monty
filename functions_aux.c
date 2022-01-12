@@ -67,19 +67,3 @@ stack_t *add_dnodeint(stack_t **head, const int n)
 	}
 	return (new_dlist);
 }
-
-/**
- * empty_str - verify is a string is spaces or \n
- * @str: string.
- * Return: 0 on succesful, 1 if failed.
- */
-
-int empty_str(char *str)
-{
-	int i;
-
-	for (i = 0; str[i]; i++)
-		if (str[i] != '\n' && str[i] != ' ')
-			return (1);
-	return (0);
-}
