@@ -56,5 +56,6 @@ void pop(stack_t **stack, unsigned int line_number);
 stack_t *add_dnodeint(stack_t **head, const int n);
 void free_dlist(stack_t *head);
 void error(__attribute__((unused)) stack_t **stack, unsigned int line_number);
+int empty_str(char *str);
 
 #endif /* MONTY_H */
