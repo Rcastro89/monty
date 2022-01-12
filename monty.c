@@ -33,7 +33,8 @@ int main(int argc, char *argv[])
 	while (fscanf(temp_file, "%[^\n] ", lines) != EOF)
 	{
 		number_line += 1;
-		codes(lines)(&head, number_line);
+		if (empty_str(lines) == 1)
+			codes(lines)(&head, number_line);
 	}
 	free_dlist(head);
 	free(lines);
