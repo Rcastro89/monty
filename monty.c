@@ -8,7 +8,7 @@
 int main(int argc, char *argv[])
 {
 	struct stat sb;
-	unsigned int number_line = 1;
+	unsigned int number_line = 0;
 
 	if (argc != 2)
 	{
@@ -30,11 +30,10 @@ int main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 	head = NULL;
-	while (fgets(lines, 1024, temp_file) != NULL)
+	while (fscanf(temp_file, "%[^\n] ", lines) != EOF)
 	{
-		if (empty_str(lines) == 1)
-			codes(lines)(&head, number_line);
-		number_line++;
+		number_line += 1;
+		codes(lines)(&head, number_line);
 	}
 	free_dlist(head);
 	free(lines);
