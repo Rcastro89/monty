@@ -32,6 +32,7 @@ int main(int argc, char *argv[])
 	head = NULL;
 	while (fgets(lines, 1024, temp_file) != NULL)
 	{
+		write(1, lines, strlen(lines));
 		if (empty_str(lines) == 1)
 			codes(lines)(&head, number_line);
 		number_line++;
