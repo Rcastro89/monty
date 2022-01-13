@@ -63,3 +63,23 @@ void pchar(stack_t **stack, unsigned int line_number)
 	}
 	printf("%c\n", (*stack)->n);
 }
+
+/**
+ * pstr - prints the string starting at the top of the stack
+ * @stack: double linked list
+ * @line_number: number of evaluated line
+ */
+void pstr(stack_t **stack, unsigned int line_number)
+{
+	(void)(line_number);
+
+	while ((*stack) != NULL)
+	{
+		if ((*stack)->n < 0 || (*stack)->n > 126)
+			break;
+		printf("%c", (*stack)->n);
+		(*stack) = (*stack)->next;
+	}
+	if ((*stack) == NULL)
+		printf("\n");
+}
