@@ -80,6 +80,5 @@ void pstr(stack_t **stack, unsigned int line_number)
 		printf("%c", (*stack)->n);
 		(*stack) = (*stack)->next;
 	}
-	if ((*stack) == NULL)
-		printf("\n");
+	printf("\n");
 }
