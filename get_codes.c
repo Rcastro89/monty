@@ -45,5 +45,7 @@ void (*codes(char *sin_espacios))(stack_t **stack, unsigned int line_number)
 		}
 		i++;
 	}
+	if (array[0][0] == '#')
+		return (code[6].f);
 	return (code[i + 1].f);
 }
