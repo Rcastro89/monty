@@ -24,6 +24,7 @@ void (*codes(char *lines_1))(stack_t **stack, unsigned int line_number)
 	{
 		if (strcmp(code[i].opcode, comand) == 0)
 		{
+			free(comand);
 			return (code[i].f);
 		}
 		i++;
