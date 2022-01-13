@@ -8,7 +8,7 @@ void (*codes(char *sin_espacios))(stack_t **stack, unsigned int line_number)
 {
 	int i = 0;
 	char *delim = " \n\t\"";
-	
+
 	instruction_t code[] = {
 		{"push", push},
 		{"pall", pall},
@@ -25,7 +25,7 @@ void (*codes(char *sin_espacios))(stack_t **stack, unsigned int line_number)
 	array[0] = NULL;
 	array[1] = NULL;
 	array[0] = strtok(sin_espacios, delim);
-	
+
 	i = 0;
 	while (code[i].opcode != NULL)
 	{
