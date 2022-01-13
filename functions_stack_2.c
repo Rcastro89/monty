@@ -30,7 +30,7 @@ void swap(stack_t **stack, unsigned int line_number)
  */
 void add(stack_t **stack, unsigned int line_number)
 {
-	if (!*stack)
+	if (!*stack && !(*stack)->next)
 	{
 		fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
 		free(sin_espacios);
@@ -42,7 +42,10 @@ void add(stack_t **stack, unsigned int line_number)
 	}
 	(*stack)->next->n += (*stack)->n;
 	*stack = (*stack)->next;
+	/*pop(stack, line_number);*/
 }
+
+
 
 /**
  * nop - do nothing.
