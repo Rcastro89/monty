@@ -44,9 +44,9 @@ typedef struct instruction_s
 stack_t *head;
 stack_t *new_dlist;
 char *lines;
-char *comand;
 FILE *temp_file;
 char *sin_espacios;
+char **array;
 
 void (*codes(char *lines_1))(stack_t **stack, unsigned int line_number);
 void push(stack_t **stack, unsigned int line_number);
@@ -62,5 +62,7 @@ void swap(stack_t **stack, unsigned int line_number);
 void add(stack_t **stack, unsigned int line_number);
 void nop(stack_t **stack, unsigned int line_number);
 char *prov(char *lines);
+char *_strdup(char *str);
+void free_grid(char **grid, int height);
 
 #endif /* MONTY_H */
