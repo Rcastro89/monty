@@ -71,9 +71,9 @@ void pchar(stack_t **stack, unsigned int line_number)
  */
 void pstr(stack_t **stack, unsigned int line_number)
 {
-	(void)(line_number);
 	stack_t *temp = *stack;
-
+	(void)(line_number);
+	
 	while (temp)
 	{
 		if (temp->n < 0 || temp->n > 126)
