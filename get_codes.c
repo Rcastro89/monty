@@ -21,6 +21,7 @@ void (*codes(char *sin_espacios))(stack_t **stack, unsigned int line_number)
 		{"div", div_1},
 		{"mul", mul},
 		{"mod", mod},
+		{"pchar", pchar},
 		{NULL, NULL},
 		{"error", error}
 	};

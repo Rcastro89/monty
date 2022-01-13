@@ -64,6 +64,7 @@ void div_1(stack_t **stack, unsigned int line_number);
 void mul(stack_t **stack, unsigned int line_number);
 void mod(stack_t **stack, unsigned int line_number);
 void nop(stack_t **stack, unsigned int line_number);
+void pchar(stack_t **stack, unsigned int line_number);
 char *prov(char *lines);
 char *_strdup(char *str);
 void free_grid(char **grid, int height);
