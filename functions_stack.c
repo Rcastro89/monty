@@ -104,7 +104,7 @@ void pint(stack_t **stack, unsigned int line_number)
  */
 void pop(stack_t **stack, unsigned int line_number)
 {
-	stack_t *tmp;
+	stack_t *tmp = *stack;
 
 	if (!*stack)
 	{
@@ -116,13 +116,20 @@ void pop(stack_t **stack, unsigned int line_number)
 		free_grid(array, 0);
 		exit(EXIT_FAILURE);
 	}
-	tmp = *stack;
-	if (tmp->next)
-		{
-			*stack = tmp->next;
+	while (!*stack)
+		tmp = tmp->next;
+
+	if (tmp == *stack)
+	{
+		*stack = tmp->next;
+		if (*stack != NULL)
 			(*stack)->prev = NULL;
-		}
-		else
-			*stack = NULL;
-		free(tmp);
+	}
+	else
+	{
+		tmp->prev->next = tmp->next;
+		if (tmp->next != NULL)
+			tmp->next->prev = tmp->prev;
+	}
+	free(tmp);
 }
