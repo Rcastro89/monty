@@ -100,13 +100,12 @@ char *prov(char *lines)
 			control = 1;
 			prov[j] = lines[i];
 			j++;
-		} 
+		}
 		else if (control == 1)
 		{
 			prov[j] = lines[i];
 			j++;
 		}
-		
 	}
 	return (prov);
 }

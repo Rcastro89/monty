@@ -1,7 +1,7 @@
 #include "monty.h"
 /**
  * codes - check received command
- * @lines_1: instruction line
+ * @sin_espacios: instruction line
  * Return: Function
  */
 void (*codes(char *sin_espacios))(stack_t **stack, unsigned int line_number)

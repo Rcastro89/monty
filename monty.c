@@ -38,7 +38,6 @@ int main(int argc, char *argv[])
 			codes(sin_espacios)(&head, number_line);
 			free(sin_espacios);
 		}
-			
 		number_line++;
 	}
 	free_dlist(head);
