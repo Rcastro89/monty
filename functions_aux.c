@@ -72,7 +72,6 @@ stack_t *add_dnodeint(stack_t **head, const int n)
  * @str: string.
  * Return: 0 on succesful, 1 if failed.
  */
-
 int empty_str(char *str)
 {
 	int i;
@@ -81,4 +80,33 @@ int empty_str(char *str)
 		if (str[i] != '\n' && str[i] != ' ')
 			return (1);
 	return (0);
+}
+
+/**
+ * prov - remove espaces
+ * @lines: string.
+ * Return: char *
+ */
+char *prov(char *lines)
+{
+	char *prov = NULL;
+	int i, j = 0, control = 0;
+
+	prov = malloc(strlen(lines) + 1);
+	for (i = 0; lines[i]; i++)
+	{
+		if (lines[i] != ' ' && control == 0)
+		{
+			control = 1;
+			prov[j] = lines[i];
+			j++;
+		} 
+		else if (control == 1)
+		{
+			prov[j] = lines[i];
+			j++;
+		}
+		
+	}
+	return (prov);
 }

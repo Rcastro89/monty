@@ -46,6 +46,7 @@ stack_t *new_dlist;
 char *lines;
 char *comand;
 FILE *temp_file;
+char *sin_espacios;
 
 void (*codes(char *lines_1))(stack_t **stack, unsigned int line_number);
 void push(stack_t **stack, unsigned int line_number);
@@ -60,5 +61,6 @@ int empty_str(char *str);
 void swap(stack_t **stack, unsigned int line_number);
 void add(stack_t **stack, unsigned int line_number);
 void nop(stack_t **stack, unsigned int line_number);
+char *prov(char *lines);
 
 #endif /* MONTY_H */

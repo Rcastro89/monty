@@ -4,7 +4,7 @@
  * @lines_1: instruction line
  * Return: Function
  */
-void (*codes(char *lines_1))(stack_t **stack, unsigned int line_number)
+void (*codes(char *sin_espacios))(stack_t **stack, unsigned int line_number)
 {
 	int i = 0;
 	char *delim = " \n\t\"";
@@ -20,8 +20,8 @@ void (*codes(char *lines_1))(stack_t **stack, unsigned int line_number)
 		{NULL, NULL},
 		{"error", error}
 	};
-	comand = NULL;
-	comand = strdup(lines_1);
+
+	comand = strdup(sin_espacios);
 	comand = strtok(comand, delim);
 	while (code[i].opcode != NULL)
 	{

@@ -33,7 +33,12 @@ int main(int argc, char *argv[])
 	while (fgets(lines, 1024, temp_file) != NULL)
 	{
 		if (empty_str(lines) == 1)
-			codes(lines)(&head, number_line);
+		{
+			sin_espacios = prov(lines);
+			codes(sin_espacios)(&head, number_line);
+			free(sin_espacios);
+		}
+			
 		number_line++;
 	}
 	free_dlist(head);

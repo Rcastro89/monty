@@ -19,6 +19,7 @@ void push(stack_t **stack, unsigned int line_number)
 			if (!isdigit(token[i]))
 			{
 				fprintf(stderr, "L%d: usage: push integer\n", line_number);
+				free(sin_espacios);
 				free_dlist(head);
 				free(lines);
 				fclose(temp_file);
@@ -29,6 +30,7 @@ void push(stack_t **stack, unsigned int line_number)
 	else
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
+		free(sin_espacios);
 		free_dlist(head);
 		free(lines);
 		fclose(temp_file);
@@ -46,6 +48,7 @@ void push(stack_t **stack, unsigned int line_number)
 void error(__attribute__((unused)) stack_t **stack, unsigned int line_number)
 {
 	fprintf(stderr, "L%d: unknown instruction %s\n", line_number, comand);
+	free(sin_espacios);
 	free(comand);
 	free_dlist(head);
 	free(lines);
@@ -76,6 +79,7 @@ void pint(stack_t **stack, unsigned int line_number)
 	else
 	{
 		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
+		free(sin_espacios);
 		free_dlist(*stack);
 		free(lines);
 		fclose(temp_file);
@@ -95,6 +99,7 @@ void pop(stack_t **stack, unsigned int line_number)
 	if (!*stack)
 	{
 		fprintf(stderr, "L%d: can't pop an empty\n", line_number);
+		free(sin_espacios);
 		free_dlist(*stack);
 		free(lines);
 		fclose(temp_file);
