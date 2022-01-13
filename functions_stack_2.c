@@ -30,19 +30,23 @@ void swap(stack_t **stack, unsigned int line_number)
  */
 void add(stack_t **stack, unsigned int line_number)
 {
-	if (!*stack && !(*stack)->next)
+	stack_t *temp;
+
+	if (*stack && (*stack)->next)
+	{
+		temp = (*stack)->next;
+		(*stack)->next->n = (*stack)->next->n + (*stack)->n;
+		pop(stack, line_number);
+		*stack = temp;
+	}
+	else
 	{
 		fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
-		free(sin_espacios);
 		free_dlist(*stack);
-		free(lines);
-		fclose(temp_file);
-		free_grid(array, 0);
+		free(gv.tokens);
+		fclose(gv.fp);
 		exit(EXIT_FAILURE);
 	}
-	(*stack)->next->n += (*stack)->n;
-	*stack = (*stack)->next;
-	/*pop(stack, line_number);*/
 }
 
 
