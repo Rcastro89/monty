@@ -18,6 +18,7 @@ void (*codes(char *sin_espacios))(stack_t **stack, unsigned int line_number)
 		{"add", add},
 		{"nop", nop},
 		{"sub", sub},
+		{"div", div_1},
 		{NULL, NULL},
 		{"error", error}
 	};
