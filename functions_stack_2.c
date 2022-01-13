@@ -42,9 +42,11 @@ void add(stack_t **stack, unsigned int line_number)
 	else
 	{
 		fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
+		free(sin_espacios);
 		free_dlist(*stack);
-		free(gv.tokens);
-		fclose(gv.fp);
+		free(lines);
+		fclose(temp_file);
+		free_grid(array, 0);
 		exit(EXIT_FAILURE);
 	}
 }
