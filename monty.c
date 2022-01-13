@@ -30,6 +30,7 @@ int main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 	head = NULL;
+	sin_espacios = NULL;
 	while (fgets(lines, 1024, temp_file) != NULL)
 	{
 		if (empty_str(lines) == 1)
@@ -37,12 +38,12 @@ int main(int argc, char *argv[])
 			sin_espacios = prov(lines);
 			codes(sin_espacios)(&head, number_line);
 			free(sin_espacios);
+			free_grid(array, 0);
 		}
 		number_line++;
 	}
 	free_dlist(head);
 	free(lines);
 	fclose(temp_file);
-
 	return (0);
 }

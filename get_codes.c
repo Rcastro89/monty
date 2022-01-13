@@ -8,7 +8,7 @@ void (*codes(char *sin_espacios))(stack_t **stack, unsigned int line_number)
 {
 	int i = 0;
 	char *delim = " \n\t\"";
-
+	
 	instruction_t code[] = {
 		{"push", push},
 		{"pall", pall},
@@ -21,13 +21,16 @@ void (*codes(char *sin_espacios))(stack_t **stack, unsigned int line_number)
 		{"error", error}
 	};
 
-	comand = strdup(sin_espacios);
-	comand = strtok(comand, delim);
+	array = malloc(sizeof(char *) * (25 + 2));
+	array[0] = NULL;
+	array[1] = NULL;
+	array[0] = strtok(sin_espacios, delim);
+	
+	i = 0;
 	while (code[i].opcode != NULL)
 	{
-		if (strcmp(code[i].opcode, comand) == 0)
+		if (strcmp(code[i].opcode, array[0]) == 0)
 		{
-			free(comand);
 			return (code[i].f);
 		}
 		i++;

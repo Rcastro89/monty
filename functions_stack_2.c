@@ -15,6 +15,7 @@ void swap(stack_t **stack, unsigned int line_number)
 		free_dlist(*stack);
 		free(lines);
 		fclose(temp_file);
+		free_grid(array, 0);
 		exit(EXIT_FAILURE);
 	}
 	temp = (*stack)->n;
@@ -36,6 +37,7 @@ void add(stack_t **stack, unsigned int line_number)
 		free_dlist(*stack);
 		free(lines);
 		fclose(temp_file);
+		free_grid(array, 0);
 		exit(EXIT_FAILURE);
 	}
 	(*stack)->next->n += (*stack)->n;
