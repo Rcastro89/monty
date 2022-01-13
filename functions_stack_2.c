@@ -72,16 +72,14 @@ void pchar(stack_t **stack, unsigned int line_number)
 void pstr(stack_t **stack, unsigned int line_number)
 {
 	(void)(line_number);
-	stack_t *temp;
-	temp = *stack;
 
-	while (temp != NULL)
+	while ((*stack) != NULL)
 	{
-		if (temp->n < 0 || temp->n > 126)
+		if ((*stack)->n < 0 || (*stack)->n > 126)
 			break;
-		printf("%c", temp->n);
-		temp = temp->next;
+		printf("%c", (*stack)->n);
+		(*stack) = (*stack)->next;
 	}
-	if (temp == NULL)
+	if ((*stack) == NULL)
 		printf("\n");
 }
