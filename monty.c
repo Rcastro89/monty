@@ -30,11 +30,11 @@ int main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 	head = NULL;
-	while (fscanf(temp_file, "%[^\n] ", lines) != EOF)
+	while (fgets(lines, 1024, temp_file) != NULL)
 	{
-		number_line += 1;
 		if (empty_str(lines) == 1)
 			codes(lines)(&head, number_line);
+		number_line++;
 	}
 	free_dlist(head);
 	free(lines);
