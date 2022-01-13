@@ -6,7 +6,7 @@
  */
 void (*codes(char *sin_espacios))(stack_t **stack, unsigned int line_number)
 {
-	int i = 0;
+	int i = 0, j, contdelim = 0;
 	char *delim = " \n\t\"";
 
 	instruction_t code[] = {
@@ -21,9 +21,16 @@ void (*codes(char *sin_espacios))(stack_t **stack, unsigned int line_number)
 		{"error", error}
 	};
 
-	array = malloc(sizeof(char *) * (25 + 2));
+	for (i = 0; sin_espacios[i] && sin_espacios; i++)
+	{
+		for (j = 0; delim[j]; j++)
+		{
+			if (sin_espacios[i] == delim[j])
+				contdelim++;
+		}
+	}
+	array = malloc(sizeof(char *) * (contdelim + 2));
 	array[0] = NULL;
-	array[1] = NULL;
 	array[0] = strtok(sin_espacios, delim);
 
 	i = 0;

@@ -50,7 +50,6 @@ char **array;
 
 void (*codes(char *lines_1))(stack_t **stack, unsigned int line_number);
 void push(stack_t **stack, unsigned int line_number);
-size_t print_dlistint(const stack_t *h);
 void pall(stack_t **stack, __attribute__((unused)) unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);

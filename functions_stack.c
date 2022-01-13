@@ -65,7 +65,13 @@ void error(__attribute__((unused)) stack_t **stack, unsigned int line_number)
  */
 void pall(stack_t **stack, __attribute__((unused)) unsigned int line_number)
 {
-	print_dlistint(*stack);
+	stack_t *temp = *stack;
+
+	while (temp)
+	{
+		printf("%d\n", temp->n);
+		temp = temp->next;
+	}
 }
 
 /**
@@ -98,7 +104,7 @@ void pint(stack_t **stack, unsigned int line_number)
  */
 void pop(stack_t **stack, unsigned int line_number)
 {
-	stack_t *tmp = *stack;
+	stack_t *tmp;
 
 	if (!*stack)
 	{
@@ -110,20 +116,13 @@ void pop(stack_t **stack, unsigned int line_number)
 		free_grid(array, 0);
 		exit(EXIT_FAILURE);
 	}
-	while (!*stack)
-		tmp = tmp->next;
-
-	if (tmp == *stack)
-	{
-		*stack = tmp->next;
-		if (*stack != NULL)
+	tmp = *stack;
+	if (tmp->next)
+		{
+			*stack = tmp->next;
 			(*stack)->prev = NULL;
-	}
-	else
-	{
-		tmp->prev->next = tmp->next;
-		if (tmp->next != NULL)
-			tmp->next->prev = tmp->prev;
-	}
-	free(tmp);
+		}
+		else
+			*stack = NULL;
+		free(tmp);
 }

@@ -17,26 +17,6 @@ void free_dlist(stack_t *head)
 }
 
 /**
- * print_dlistint - print stack
- * @h: double linked list
- * Return: success
- */
-size_t print_dlistint(const stack_t *h)
-{
-	size_t count = 0;
-
-	if (h)
-	{
-		for (count = 0; h; count++)
-		{
-			printf("%d\n", h->n);
-			h = h->next;
-		}
-	}
-	return (count);
-}
-
-/**
  * add_dnodeint - add the value to the end of the stack
  * @head: double linked list
  * @n: number add
