@@ -59,6 +59,7 @@ void error(__attribute__((unused)) stack_t **stack, unsigned int line_number);
 int empty_str(char *str);
 void swap(stack_t **stack, unsigned int line_number);
 void add(stack_t **stack, unsigned int line_number);
+void sub(stack_t **stack, unsigned int line_number);
 void nop(stack_t **stack, unsigned int line_number);
 char *prov(char *lines);
 char *_strdup(char *str);
