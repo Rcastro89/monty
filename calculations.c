@@ -121,3 +121,41 @@ void mul(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 }
+
+/**
+ * mod - mod the top two elements of the stack..
+ * @stack: double linked list
+ * @line_number: number of evaluated line
+ */
+void mod(stack_t **stack, unsigned int line_number)
+{
+	stack_t *temp;
+
+	if (*stack && (*stack)->next)
+	{
+		temp = (*stack)->next;
+		if ((*stack)->n == 0)
+		{
+			fprintf(stderr, "L%d: division by zero\n", line_number);
+			free(sin_espacios);
+			free_dlist(*stack);
+			free(lines);
+			fclose(temp_file);
+			free_grid(array, 0);
+			exit(EXIT_FAILURE);
+		}
+		(*stack)->next->n = (*stack)->next->n % (*stack)->n;
+		pop(stack, line_number);
+		*stack = temp;
+	}
+	else
+	{
+		fprintf(stderr, "L%d: can't mod, stack too short\n", line_number);
+		free(sin_espacios);
+		free_dlist(*stack);
+		free(lines);
+		fclose(temp_file);
+		free_grid(array, 0);
+		exit(EXIT_FAILURE);
+	}
+}
