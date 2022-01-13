@@ -8,7 +8,7 @@
 int main(int argc, char *argv[])
 {
 	struct stat sb;
-	unsigned int number_line = 0;
+	unsigned int number_line = 1;
 
 	if (argc != 2)
 	{
