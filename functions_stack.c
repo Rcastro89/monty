@@ -88,7 +88,7 @@ void pint(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * pop - pop the number on the stack
+ * pop - pop removes the top element of the stack.
  * @stack: double linked list
  * @line_number: number of evaluated line
  */
