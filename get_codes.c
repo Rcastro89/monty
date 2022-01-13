@@ -30,7 +30,6 @@ void (*codes(char *sin_espacios))(stack_t **stack, unsigned int line_number)
 		}
 	}
 	array = malloc(sizeof(char *) * (contdelim + 2));
-	array[0] = NULL;
 	array[0] = strtok(sin_espacios, delim);
 
 	i = 0;

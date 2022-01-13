@@ -86,5 +86,6 @@ char *prov(char *lines)
 			j++;
 		}
 	}
+	prov[j] = '\0';
 	return (prov);
 }
