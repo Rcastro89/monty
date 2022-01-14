@@ -107,6 +107,6 @@ $ ./monty <file_path>
 
 
 # Authors:
-  - Reinaldo Catro - [Rcastro89](https://github.com/Rcastro89) 
+  - Reinaldo Castro - [Rcastro89](https://github.com/Rcastro89) 
   - Carolina Espitia - [caritoespicaita](https://github.com/caritoespicaita) 
 
