@@ -103,7 +103,7 @@ $ ./monty <file_path>
 
 ## Advanced Tasks
 
-- opcodes: sub, div, mul, mod, comments, pchar, pstr, rotl, rotr, stack, queue, Holberton, Add two digits, Multiplication, Multiplication level up
+- opcodes: sub, div, mul, mod, comments, pchar, pstr, rotl, rotr, stack, queue, Brainf*ck, Add two digits, Multiplication, Multiplication level up
 
 
 # Authors:
