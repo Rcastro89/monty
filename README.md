@@ -106,39 +106,6 @@ $ ./monty <file_path>
 - opcodes: sub, div, mul, mod, comments, pchar, pstr, rotl, rotr, stack, queue, Holberton, Add two digits, Multiplication, Multiplication level up
 
 
-------------
-
-## Files:
-
-------------
-  `
-- monty.c 
-  `
-  ```
-- monty.h
-  ```
-  ```
-- gey_codes.c 
-  ```
-  ```
-- functions_aux.c 
-  ```
-  ```
-- functions_aux_2.c 
-  ```
-  ```
-- functions_stack.c 
-  ```
-  ```
-- functions_stack_2.c 
-  ```
-  ```
-- functions_stack_3.c 
-  ```
-  ```
-- calculations.c 
-  ```
-
 # Authors:
   - Reinaldo Catro - [RCastro89](https://github.com/Rcastro89) 
   - Carolina Espitia [caritoespicaita](https://github.com/caritoespicaita) 
