@@ -111,9 +111,9 @@ $ ./monty <file_path>
 ## Files:
 
 ------------
-  ```
+  `
 - monty.c 
-  ```
+  `
   ```
 - monty.h
   ```
@@ -140,6 +140,6 @@ $ ./monty <file_path>
   ```
 
 # Authors:
-  - [Reinaldo Catro](https://github.com/Rcastro89) 
-  - [Carolina Espitia](https://github.com/caritoespicaita) 
+  - Reinaldo Catro - [RCastro89](https://github.com/Rcastro89) 
+  - Carolina Espitia [caritoespicaita](https://github.com/caritoespicaita) 
 
